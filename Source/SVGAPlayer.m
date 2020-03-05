@@ -59,7 +59,7 @@
 }
 
 - (void)initPlayer {
-    self.contentMode = UIViewContentModeTop;
+    self.contentMode = UIViewContentModeCenter;
     self.clearsAfterStop = YES;
 }
 
@@ -166,7 +166,8 @@
 - (void)draw {
     self.drawLayer = [[CALayer alloc] init];
     self.drawLayer.frame = CGRectMake(0, 0, self.videoItem.videoSize.width, self.videoItem.videoSize.height);
-    self.drawLayer.masksToBounds = true;
+    self.drawLayer.contentsGravity = kCAGravityCenter;
+    //self.drawLayer.masksToBounds = true;
     NSMutableDictionary *tempHostLayers = [NSMutableDictionary dictionary];
     NSMutableArray *tempContentLayers = [NSMutableArray array];
     
